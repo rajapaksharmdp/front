@@ -9,12 +9,14 @@
 <body>
   <header>
     <nav class="toolbar">
-      <h1>Welcome to My Book Store</h1>
+      <h1 [routerLink]="['/home']" ><i class="fas fa-home" style="cursor: pointer; text-align: center;" ></i>&nbsp; &nbsp;Home</h1>
+      <h1 >&nbsp; &nbsp;Welcome to My Book Store</h1>
       <div class="buttons">
-        <button>Search</button>
-        <button>About</button>
-        <button>Categories</button>
-        <button>Contacts</button>
+        <button [routerLink]="['/search']"> <i class="fas fa-search"></i>&nbsp; &nbsp; Search</button>
+        <button [routerLink]="['/cart']"><i class="fas fa-shopping-cart"></i>&nbsp; &nbsp;Cart</button>
+
+        <button [routerLink]="['/about']"> <i class="fas fa-info-circle"></i>&nbsp; &nbsp;About</button>
+        <!-- <button [routerLink]="['/categories']">  <i class="fas fa-th"></i>&nbsp; &nbsp;Categories</button> -->
       </div>
     </nav>
   </header>
@@ -27,7 +29,7 @@
   <footer>
     <div class="footer-content">
       <p>&copy; 2023 All Rights Reserved.</p>
-      <div class="social-links">
+      <!-- <div class="social-links">
         <a href="https://www.facebook.com/universityofkelaniyasl" target="_blank" aria-label="facebook">
           <i class="fa fa-facebook fa-lg" aria-hidden="true"></i>
         </a>
@@ -43,7 +45,7 @@
         <a href="https://www.instagram.com/university_of_kelaniya" target="_blank" aria-label="Instagram">
           <i class="fa fa-instagram fa-lg" aria-hidden="true"></i>
         </a>
-      </div>
+      </div> -->
     </div>
   </footer>
 </body>

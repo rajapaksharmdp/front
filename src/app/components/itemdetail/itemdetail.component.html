@@ -1,0 +1,14 @@
+<!-- itemdetail.component.html -->
+<div class="item-detail-container" *ngIf="book">
+    <div class="card">
+      <div class="image-container">
+        <img [src]="book.imageUrl" alt="{{ book.title }}" />
+      </div>
+      <div class="details-container">
+        <h1>{{ book.title }}</h1>
+        <p>{{ book.shortDetails }}</p>
+        <!-- Add more details as needed -->
+      </div>
+    </div>
+  </div>
+  

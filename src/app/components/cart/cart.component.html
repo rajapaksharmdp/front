@@ -1,0 +1,41 @@
+<div class="container mt-4">
+    <div class="row">
+      <div class="col-md-8">
+        <h1>Shopping Cart</h1>
+       
+
+        <table class="table">
+            <thead>
+              <tr>
+                <th>Item</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Remove</th>
+              </tr>
+            </thead>
+            <tbody id="cartItems">
+              <tr *ngFor="let item of cartItems">
+                <td>{{ item.title }}</td>
+                <td>{{ item.price | currency }}</td>
+                <td>
+                  <span>{{ item.quantity }}</span>
+                  <button (click)="increaseQuantity(item)">+</button>
+                  <button (click)="decreaseQuantity(item)">-</button>
+                </td>
+                <td>
+                  <button (click)="removeFromCart(item.bookid)">Remove All</button>
+                </td>
+              </tr>
+            </tbody>
+            <tr>
+              <td></td>
+              <td id="cartTotalPrice">{{ totalCartPrice | currency }}</td>
+              <td></td>
+            </tr>
+          </table>
+
+        <button (click)="clearCart()">Clear Cart</button>
+      </div>
+    </div>
+  </div>
+  

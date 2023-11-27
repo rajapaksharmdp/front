@@ -1,0 +1,43 @@
+/* itemdetail.component.css */
+.item-detail-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 84.75vh;
+  }
+  
+  .card {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two columns, one for image and one for details */
+    max-width: 800px; /* Adjust the max-width as needed */
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .image-container {
+    grid-column: 1 / 2; /* Span the first column */
+  }
+  
+  .image-container img {
+    width: 100%; /* Set the image width to 100% of the container */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 4px;
+  }
+  
+  .details-container {
+    grid-column: 2 / 3; /* Span the second column */
+    overflow: hidden; /* Hide overflowing content */
+  }
+  
+  .card h1 {
+    margin-top: 0; /* Remove default margin for h1 */
+  }
+  
+  .card p {
+    margin-bottom: 10px;
+    overflow: hidden; /* Hide overflowing content */
+    word-wrap: break-word; /* Break words to prevent overflow */
+  }
+  

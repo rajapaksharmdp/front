@@ -1,0 +1,45 @@
+<!-- search.component.html -->
+<div style="display: flex; justify-content: center;">
+  <div
+    style="
+      text-align: center;
+      margin: 25px;
+      background-color: dimgrey;
+      padding: 10px;
+      font-size: large;
+      max-width: 50%;
+      max-height: 50%;
+      color: white;
+    "
+  >
+    <label for="category">Select Category: &nbsp; &nbsp; &nbsp; &nbsp;</label>
+    <select id="category" [(ngModel)]="selectedCategory">
+      <!-- <option value="all">All Categories</option> -->
+      <option *ngFor="let category of categories" [value]="category">
+        {{ category }}
+      </option>
+    </select>
+    &nbsp; &nbsp; &nbsp; &nbsp;
+    <label for="bookName">Search by Book Name: &nbsp; &nbsp; &nbsp; &nbsp;</label>
+    <input type="text" id="bookName" [(ngModel)]="searchTerm" />
+    &nbsp; &nbsp; &nbsp; &nbsp;
+    <button (click)="search()">Search</button>
+  </div>
+</div>
+
+
+
+
+<!-- Display search results here -->
+<div class="item-detail-container">
+  <div class="book-tiles">
+    <div *ngFor="let book of filteredBooks" class="book-tile">
+      <img [src]="book.imageUrl" alt="{{ book.title }}" />
+      <h2>{{ book.title }}</h2>
+      <p>{{ book.shortDetails }}</p>
+      <div class="buttons">
+        <button (click)="viewItemDetails(book)">View Item</button>
+      </div>
+    </div>
+  </div>
+</div>
