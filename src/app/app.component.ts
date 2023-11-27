@@ -21,6 +21,7 @@ export class AppComponent {
 
   logout(): void {
     this.authService.logout();
+    
     // Add any additional logout logic if needed
   }
 }

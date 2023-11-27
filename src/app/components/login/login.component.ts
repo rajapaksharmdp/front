@@ -1,6 +1,6 @@
 // login.component.ts
 
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/service/auth/auth.service';
 import { UserService } from 'src/app/service/user.service';
@@ -10,7 +10,7 @@ import { UserService } from 'src/app/service/user.service';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent {
+export class LoginComponent implements OnInit{
   credentials: { username: string; password: string } = { username: '', password: '' };
   isAuthenticated: boolean = false;
 
@@ -19,7 +19,18 @@ export class LoginComponent {
     this.authService.isAuthenticated$.subscribe((status) => {
       this.isAuthenticated = status;
     });
+
+    // this.reload();
   }
+
+  ngOnInit(): void {
+  // this.reload();
+  }
+
+  reload(){
+    window.location.reload();
+  }
+
 
   login(): void {
     this.authService.login(this.credentials).subscribe(

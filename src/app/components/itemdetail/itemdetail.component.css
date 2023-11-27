@@ -9,7 +9,7 @@
   .card {
     display: grid;
     grid-template-columns: 1fr 1fr; /* Two columns, one for image and one for details */
-    max-width: 800px; /* Adjust the max-width as needed */
+    max-width: 650px; /* Adjust the max-width as needed */
     padding: 20px;
     border: 1px solid #ddd;
     border-radius: 8px;
@@ -24,6 +24,7 @@
     width: 100%; /* Set the image width to 100% of the container */
     height: auto; /* Maintain aspect ratio */
     border-radius: 4px;
+    padding: 10px;
   }
   
   .details-container {

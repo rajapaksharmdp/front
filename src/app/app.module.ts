@@ -10,11 +10,13 @@ import { AboutComponent } from './components/about/about.component';
 import { SearchComponent } from './components/search/search.component';
 import { ItemdetailComponent } from './components/itemdetail/itemdetail.component';
 import { CartComponent } from './components/cart/cart.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { SignupComponent } from './components/signup/signup.component';
 import { LoginComponent } from './components/login/login.component';
 import { SummaryComponent } from './components/summary/summary.component';
+import { StarRatingModule } from 'angular-star-rating';
+
 
 
 @NgModule({
@@ -29,6 +31,7 @@ import { SummaryComponent } from './components/summary/summary.component';
     SignupComponent,
     LoginComponent,
     SummaryComponent,
+   
     
   ],
   imports: [
@@ -36,7 +39,9 @@ import { SummaryComponent } from './components/summary/summary.component';
     AppRoutingModule, // Include the AppRoutingModule
     RouterModule,
     FormsModule,
-    HttpClientModule
+    ReactiveFormsModule,
+    HttpClientModule,
+    StarRatingModule.forRoot(),
   ],
   bootstrap: [AppComponent]
 })

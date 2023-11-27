@@ -2,8 +2,11 @@
 
 @import '~@fortawesome/fontawesome-free/css/all.css';
 
+body {
+  background-color: #fff8fa; /* Replace with your desired color code */
+}
 header {
-    background-color: #333;
+    background-color: #241468;
     color: white;
     padding: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
@@ -32,7 +35,7 @@ header {
   
   button {
     padding: 5px 10px;
-    background-color: #007bff;
+    background-color: #c32270;
     color: white;
     border: none;
     border-radius: 3px;
@@ -46,7 +49,7 @@ header {
   
   /* Footer Styles */
   footer {
-    background-color: #333;
+    background-color: #241468;
     color: white;
     padding: 10px 0;
     text-align: center;

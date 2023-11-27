@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Book } from 'src/app/model/book.model';
 import { BookService } from 'src/app/service/book.service';
@@ -8,18 +9,23 @@ import { UserService } from 'src/app/service/user.service';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  styleUrls: ['./home.component.css'],
+  // changeDetection: ChangeDetectionStrategy.Default,
 })
-export class HomeComponent {
+export class HomeComponent implements OnInit{
 
   books: Book[] = [];
   bookid:any;
   book!: Book;
   user: any; 
+  rating:any;
+ 
 
   constructor(private bookService: BookService, private router: Router,private cartService: CartService,private userService: UserService) {
     this.user = this.userService.getUserData();
   }
+
+  private isReloading = false;
 
   searchBooks() {
     // Implement book search logic here
@@ -42,8 +48,11 @@ export class HomeComponent {
   
 
   ngOnInit(): void {
+    this.user = this.userService.getUserData();
+    // this.reloadPage()
     this.bookService.getBooks().subscribe((books) => {
       this.books = books;
+      // this.rating =this.books.rating
       console.log('this.books', this.books)
       // this.bookid=books.bookid;
     });
@@ -62,4 +71,10 @@ export class HomeComponent {
   }
 
   
+  reloadPage(): void {
+    if (!this.isReloading) {
+      this.isReloading = true;
+      location.reload();
+    }
+  }
 }

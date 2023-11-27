@@ -42,10 +42,11 @@ export class AuthService {
     // Clear session storage
     sessionStorage.removeItem('userData');
        // Reload the page
-       window.location.reload();
-
+      
        // Navigate to the login page
        this.router.navigate(['/login']);
+      //  window.location.reload();
+
   }
 
   isAuthenticated(): boolean {

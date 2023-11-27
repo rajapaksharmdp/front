@@ -19,6 +19,8 @@ export class SearchComponent implements OnInit {
 
   ngOnInit(): void {
     // Initialize categories and books
+    this.search();
+
     this.bookService.getCategories1().subscribe(
       (categories) => {
         this.categories = ['All', 'Kids', 'History', 'Science', 'Novel'];

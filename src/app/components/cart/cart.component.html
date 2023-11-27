@@ -20,11 +20,11 @@
                 <td>{{ item.price | currency }}</td>
                 <td>
                   <span>{{ item.quantity }}</span>
-                  <button (click)="increaseQuantity(item)">+</button>
-                  <button (click)="decreaseQuantity(item)">-</button>
+                  <button class="button1" (click)="increaseQuantity(item)">+</button>
+                  <button class="button2"  (click)="decreaseQuantity(item)">-</button>
                 </td>
                 <td>
-                  <button (click)="removeFromCart(item.bookid)">Remove All</button>
+                  <button class="button3"  (click)="removeFromCart(item.bookid)">Remove All</button>
                 </td>
               </tr>
             </tbody>

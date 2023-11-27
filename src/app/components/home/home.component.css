@@ -37,4 +37,60 @@
   margin-top: auto; /* Push the footer to the bottom */
 }
 
-  
+.offer-tile {
+  border: 1px solid #ddd;
+  padding: 20px;
+  margin-bottom: 20px;
+  transition: transform 0.3s ease-in-out;
+  text-align: center;
+}
+
+.black-friday-offer {
+  background-color: #000;
+  color: #fff;
+}
+
+.christmas-special {
+  background-color: #e74c3c;
+  color: #fff;
+}
+
+/* Add hover effect for sliding */
+.offer-tile:hover {
+  transform: scale(1.05);
+}
+
+.button1 {
+  padding: 5px 10px;
+  background-color: #00aaff;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  margin-left: 5px;
+}
+
+.button2 {
+  padding: 5px 10px;
+  background-color: #c32270;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  margin-left: 5px;
+}
+
+
+.star {
+  font-size: 24px;
+  color: #ffd700;
+  cursor: pointer;
+}
+
+.full {
+  color: #ffac33;
+}
+
+.buttons {
+  margin-top: 10px;
+}

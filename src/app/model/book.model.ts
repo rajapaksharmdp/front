@@ -6,4 +6,5 @@ export interface Book {
     category:string;
     price: number;
     quantity:number;
+    rating:number;
 }
