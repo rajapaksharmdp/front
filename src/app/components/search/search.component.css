@@ -1,12 +1,13 @@
-/* itemdetail.component.css */
-.item-detail-container {
-    
-    /* height: 85vh; */
-  }
+.home {
+  /* margin-top: 7%; */
+  min-height: 85vh; /* Ensure the content takes at least the full viewport height */
+  /* display: flex; */
+  /* flex-direction: column; */
+}
 
-  .footer {
-    margin-top: auto; /* Push the footer to the bottom */
-  }
+.footer {
+  margin-top: auto; /* Push the footer to the bottom */
+}
 
   button {
     padding: 5px 10px;

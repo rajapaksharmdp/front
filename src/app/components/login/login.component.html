@@ -1,1 +1,28 @@
-<p>login works!</p>
+<!-- login.component.html -->
+<div class="home">
+<div class="container mt-4">
+    <h2>Login</h2>
+    <form (ngSubmit)="login()" #loginForm="ngForm">
+      <div class="form-group">
+        <label for="username">Username</label>
+        <input type="text" class="form-control" id="username" required [(ngModel)]="credentials.username" name="username">
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" class="form-control" id="password" required [(ngModel)]="credentials.password" name="password">
+      </div>
+      <button style="float: right;" type="submit" class="btn btn-primary" [disabled]="!loginForm.valid">Login</button>
+
+    </form>
+
+    
+      
+    <div class="form-group" style="padding-top: 30px;align-items: center;">
+        <!-- Add this button to your template -->
+        <label for="newaccount">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;If you haven't account please create new one. &nbsp;</label>
+        <button style=" margin-left: 50%;margin-right: 50%;" class="btn btn-primary" [routerLink]="['/signup']">SignUp</button>
+
+      </div>
+  </div>
+  
+</div>

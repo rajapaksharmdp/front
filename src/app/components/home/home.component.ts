@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { Book } from 'src/app/model/book.model';
 import { BookService } from 'src/app/service/book.service';
 import { CartService } from 'src/app/service/cart.service';
+import { UserService } from 'src/app/service/user.service';
 
 @Component({
   selector: 'app-home',
@@ -14,8 +15,11 @@ export class HomeComponent {
   books: Book[] = [];
   bookid:any;
   book!: Book;
+  user: any; 
 
-  constructor(private bookService: BookService, private router: Router,private cartService: CartService) {}
+  constructor(private bookService: BookService, private router: Router,private cartService: CartService,private userService: UserService) {
+    this.user = this.userService.getUserData();
+  }
 
   searchBooks() {
     // Implement book search logic here

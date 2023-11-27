@@ -12,8 +12,9 @@ import { ItemdetailComponent } from './components/itemdetail/itemdetail.componen
 import { CartComponent } from './components/cart/cart.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { SignupComponent } from './signup/signup.component';
-import { LoginComponent } from './login/login.component';
+import { SignupComponent } from './components/signup/signup.component';
+import { LoginComponent } from './components/login/login.component';
+import { SummaryComponent } from './components/summary/summary.component';
 
 
 @NgModule({
@@ -27,6 +28,7 @@ import { LoginComponent } from './login/login.component';
     CartComponent,
     SignupComponent,
     LoginComponent,
+    SummaryComponent,
     
   ],
   imports: [

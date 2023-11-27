@@ -1,0 +1,27 @@
+/* signup.component.css */
+
+.container {
+    max-width: 400px;
+    margin: auto;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  .btn-primary {
+    margin-top: 10px;
+    float: right;
+  }
+  
+
+  .home {
+    margin-top: 7%;
+    min-height: 85vh; /* Ensure the content takes at least the full viewport height */
+    display: flex;
+    /* flex-direction: column; */
+  }
+  
+  .footer {
+    margin-top: auto; /* Push the footer to the bottom */
+  }

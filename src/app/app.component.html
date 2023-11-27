@@ -10,12 +10,14 @@
   <header>
     <nav class="toolbar">
       <h1 [routerLink]="['/home']" ><i class="fas fa-home" style="cursor: pointer; text-align: center;" ></i>&nbsp; &nbsp;Home</h1>
-      <h1 >&nbsp; &nbsp;Welcome to My Book Store</h1>
+      <h1 >&nbsp;Hi, {{this.user.username}} &nbsp;Welcome to My Book Store</h1>
       <div class="buttons">
         <button [routerLink]="['/search']"> <i class="fas fa-search"></i>&nbsp; &nbsp; Search</button>
-        <button [routerLink]="['/cart']"><i class="fas fa-shopping-cart"></i>&nbsp; &nbsp;Cart</button>
+        <button *ngIf="this.user.role != 'admin'" [routerLink]="['/cart']"><i class="fas fa-shopping-cart"></i>&nbsp; &nbsp;Cart</button>
+        <button *ngIf="this.user.role == 'admin' && isAuthenticated()" [routerLink]="['/summary']"><i class="fas fa-admin"></i>&nbsp; &nbsp;Summary</button>
 
-        <button [routerLink]="['/about']"> <i class="fas fa-info-circle"></i>&nbsp; &nbsp;About</button>
+        <button *ngIf="!isAuthenticated()" [routerLink]="['/login']"> <i class="fas fa-user"></i>&nbsp; &nbsp;Login</button>
+       <button *ngIf="isAuthenticated()" (click)="logout()">Logout</button>
         <!-- <button [routerLink]="['/categories']">  <i class="fas fa-th"></i>&nbsp; &nbsp;Categories</button> -->
       </div>
     </nav>

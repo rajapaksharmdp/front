@@ -9,7 +9,7 @@ import { BookService } from 'src/app/service/book.service';
   styleUrls: ['./search.component.css']
 })
 export class SearchComponent implements OnInit {
-  categories: string[] = [];
+  categories: string[] = ['All', 'Kids', 'History', 'Science', 'Novel'];
   selectedCategory: string = 'All';
   searchTerm: string = '';
   books: Book[] = [];
@@ -19,9 +19,9 @@ export class SearchComponent implements OnInit {
 
   ngOnInit(): void {
     // Initialize categories and books
-    this.bookService.getCategories().subscribe(
+    this.bookService.getCategories1().subscribe(
       (categories) => {
-        this.categories = ['All', ...categories];
+        this.categories = ['All', 'Kids', 'History', 'Science', 'Novel'];
       },
       (error) => {
         console.error('Error fetching categories', error);
@@ -40,12 +40,19 @@ export class SearchComponent implements OnInit {
   }
 
   search(): void {
-    // Filter books based on the selected category and/or book name
-    this.filteredBooks = this.books.filter(
-      (book) =>
-        (this.selectedCategory === 'All' || book.category === this.selectedCategory) &&
-        (book.title.toLowerCase().includes(this.searchTerm.toLowerCase()) ||
-          this.searchTerm === '')
+    // Call getBooks with the selected category
+    this.bookService.getCategories(this.selectedCategory).subscribe(
+      (books) => {
+        // Filter books based on the selected category and/or book name
+        this.filteredBooks = books.filter(
+          (book) =>
+            (book.title.toLowerCase().includes(this.searchTerm.toLowerCase()) ||
+              this.searchTerm === '')
+        );
+      },
+      (error) => {
+        console.error('Error fetching books', error);
+      }
     );
   }
 

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Book } from '../model/book.model';
 
 @Injectable({
@@ -19,8 +19,13 @@ export class BookService {
     return this.http.get<Book>(`${this.apiUrl}/books/${id}`);
   }
 
-  getCategories(): Observable<string[]> {
+  getCategories1(): Observable<string[]> {
     return this.http.get<string[]>(`${this.apiUrl}/categories`);
+  }
+
+  getCategories(category: string): Observable<Book[]> {
+    // Make the HTTP request based on the provided category
+    return this.http.get<Book[]>(`${this.apiUrl}/getbooks/${category}`);
   }
 
   getAllBooks(): Observable<Book[]> {
@@ -28,11 +33,12 @@ export class BookService {
   }
 
   searchBooks(category: string, searchTerm: string): Observable<Book[]> {
-    const queryParams = {
-      category: category === 'All' ? '' : category,
-      searchTerm: searchTerm || '',
-    };
+    // Set up parameters for the search
+    let params = new HttpParams();
+    params = params.set('category', category);
+    params = params.set('searchTerm', searchTerm);
 
-    return this.http.get<Book[]>(`${this.apiUrl}/search`, { params: queryParams });
+    // Make the HTTP request
+    return this.http.get<Book[]>(`${this.apiUrl}/search`, { params });
   }
 }
