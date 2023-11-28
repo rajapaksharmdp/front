@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { Book } from 'src/app/model/book.model';
 import { BookService } from 'src/app/service/book.service';
 import { CartService } from 'src/app/service/cart.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-search',
@@ -22,24 +23,24 @@ export class SearchComponent implements OnInit {
     // Initialize categories and books
     this.search();
 
-    this.bookService.getCategories1().subscribe(
-      (categories) => {
-        this.categories = ['All', 'Kids', 'History', 'Science', 'Novel'];
-      },
-      (error) => {
-        console.error('Error fetching categories', error);
-      }
-    );
+    // this.bookService.getCategories1().subscribe(
+    //   () => {
+    //     this.categories = ['All', 'Kids', 'History', 'Science', 'Novel'];
+    //   },
+    //   (error) => {
+    //     console.error('Error fetching categories', error);
+    //   }
+    // );
 
-    this.bookService.getAllBooks().subscribe(
-      (books) => {
-        this.books = books;
-        this.filteredBooks = books;
-      },
-      (error) => {
-        console.error('Error fetching books', error);
-      }
-    );
+    // this.bookService.getAllBooks().subscribe(
+    //   (books) => {
+    //     this.books = books;
+    //     this.filteredBooks = books;
+    //   },
+    //   (error) => {
+    //     console.error('Error fetching books', error);
+    //   }
+    // );
   }
 
   search(): void {
@@ -60,9 +61,15 @@ export class SearchComponent implements OnInit {
   }
 
   addToCart(bookId: number): void {
-    console.log('Adding to cart:', bookId);
+    // console.log('Adding to cart:', bookId);
       // Pass the book id to addToCart instead of the entire book object
       this.cartService.addToCart(bookId);
+
+      Swal.fire({
+        title: 'Success',
+        text: 'Book added to cart successfully!',
+        icon: 'success',
+      });
     
   }
 

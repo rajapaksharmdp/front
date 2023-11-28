@@ -13,4 +13,5 @@ export interface Book {
       }[];
     noOfBooksSold:number;
     noOfBooksInStore:number;
+    author:[]
 }

@@ -16,6 +16,13 @@
           </div>
           
         </div>
+
+        <div *ngIf="book && book.author && book.author.length > 0">
+          <h6>Authors:</h6>
+          <ul>
+            <li *ngFor="let author of book.author">{{ author }}</li>
+          </ul>
+        </div>
         <!-- Display reviews if available -->
   <div *ngIf="book.reviews && book.reviews.length > 0">
     <h6>Reviews:</h6>
@@ -29,6 +36,7 @@
 
   <!-- <button class="button1" (click)="viewItemDetails(book)">View Item</button> -->
       <button class="button2" (click)="addToCart(book.bookid)">Add to Cart</button>
+      <button class="button2">Add Review & Rating</button>
       </div>
     </div>
   </div>

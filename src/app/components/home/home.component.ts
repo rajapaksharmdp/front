@@ -5,6 +5,7 @@ import { Book } from 'src/app/model/book.model';
 import { BookService } from 'src/app/service/book.service';
 import { CartService } from 'src/app/service/cart.service';
 import { UserService } from 'src/app/service/user.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-home',
@@ -53,15 +54,20 @@ export class HomeComponent implements OnInit{
     this.bookService.getBooks().subscribe((books) => {
       this.books = books;
       // this.rating =this.books.rating
-      console.log('this.books', this.books)
+      // console.log('this.books', this.books)
       // this.bookid=books.bookid;
     });
   }
 
   addToCart(bookId: number): void {
-    console.log('Adding to cart:', bookId);
+    // console.log('Adding to cart:', bookId);
       // Pass the book id to addToCart instead of the entire book object
       this.cartService.addToCart(bookId);
+      Swal.fire({
+        title: 'Success',
+        text: 'Book added to cart successfully!',
+        icon: 'success',
+      });
     
   }
 

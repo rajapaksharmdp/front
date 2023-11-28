@@ -35,7 +35,7 @@ export class LoginComponent implements OnInit{
   login(): void {
     this.authService.login(this.credentials).subscribe(
       (response) => {
-        console.log('response', response.user)
+        // console.log('response', response.user)
         // Assuming your API returns user data in the response
         const userData = {
           username: response.user.username,
