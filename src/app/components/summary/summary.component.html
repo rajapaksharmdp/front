@@ -1,4 +1,30 @@
-<div *ngIf="isAuthenticated">
-    <!-- Your summary content goes here -->
-    <p>This content will only be displayed if the user is logged in.</p>
-  </div>
+<!-- summary.component.html -->
+
+<div *ngIf="isAuthenticated" class="container">
+  <!-- <h2>Welcome, {{ user.name }}!</h2> -->
+
+  <h3>Admin Dashboard -  Book Summary</h3>
+
+  <div class="container">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Price</th>
+        <th>In Stock Items</th>
+        <th>Sold Items</th>
+        <!-- Add more table headers based on your book properties -->
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let book of booksInStore">
+        <td>{{ book.title }}</td>
+        <td>$ &nbsp;{{ book.price}}</td>
+        <td>{{ book.noOfBooksInStore }}</td>
+        <td>{{ book.noOfBooksSold }}</td>
+        <!-- Add more table cells based on your book properties -->
+      </tr>
+    </tbody>
+  </table>
+</div>
+</div>

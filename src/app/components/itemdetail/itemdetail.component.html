@@ -6,8 +6,29 @@
       </div>
       <div class="details-container">
         <h1>{{ book.title }}</h1>
-        <p>{{ book.shortDetails }}</p>
-        <!-- Add more details as needed -->
+        <p>{{ book.description }}</p>
+        <div style="display: flex; justify-content: space-between;margin-left: 15%;margin-right: 15%;">
+          <div>
+            <h6>$ &nbsp;{{ book.price }}</h6>
+          </div>
+          <div>
+            <h6>Rating: &nbsp;{{ book.rating }}</h6>
+          </div>
+          
+        </div>
+        <!-- Display reviews if available -->
+  <div *ngIf="book.reviews && book.reviews.length > 0">
+    <h6>Reviews:</h6>
+    <ul>
+      <li *ngFor="let review of book.reviews">
+        <p>{{ review.reviewerName }}:&nbsp;{{ review.reviewText }}</p>
+        
+      </li>
+    </ul>
+  </div>
+
+  <!-- <button class="button1" (click)="viewItemDetails(book)">View Item</button> -->
+      <button class="button2" (click)="addToCart(book.bookid)">Add to Cart</button>
       </div>
     </div>
   </div>

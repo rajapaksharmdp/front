@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Book } from 'src/app/model/book.model';
 import { BookService } from 'src/app/service/book.service';
+import { CartService } from 'src/app/service/cart.service';
 
 @Component({
   selector: 'app-search',
@@ -15,7 +16,7 @@ export class SearchComponent implements OnInit {
   books: Book[] = [];
   filteredBooks: Book[] = [];
 
-  constructor(private bookService: BookService, private router: Router) {}
+  constructor(private bookService: BookService, private router: Router,private cartService: CartService) {}
 
   ngOnInit(): void {
     // Initialize categories and books
@@ -57,6 +58,14 @@ export class SearchComponent implements OnInit {
       }
     );
   }
+
+  addToCart(bookId: number): void {
+    console.log('Adding to cart:', bookId);
+      // Pass the book id to addToCart instead of the entire book object
+      this.cartService.addToCart(bookId);
+    
+  }
+
 
   viewItemDetails(book: Book): void {
     // Navigate to the itemdetail page with the book details

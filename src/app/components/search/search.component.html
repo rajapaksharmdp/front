@@ -37,13 +37,23 @@
     <div *ngFor="let book of filteredBooks" class="book-tile">
       <img [src]="book.imageUrl" alt="{{ book.title }}" />
       <h2>{{ book.title }}</h2>
-      <p>{{ book.shortDetails }}</p>
-      <div class="buttons">
-        <button (click)="viewItemDetails(book)">View Item</button>
+      <div style="display: flex; justify-content: space-between;margin-left: 25%;margin-right: 25%;">
+        <div>
+          <h4>$ &nbsp;{{ book.price }}</h4>
+        </div>
+        <div>
+          <h4>Rating: &nbsp;{{ book.rating }}</h4>
+        </div>
+        <!-- <ngx-star-rating formControlName="rating2" [id]="'rating2'" [disabled] ="true"></ngx-star-rating> -->
+      </div>
+      
+      <!-- <star-rating [starType]="'svg'" [rating]=4.0>{{book.rating}}</star-rating> -->
+   
+      <button class="button1" (click)="viewItemDetails(book)">View Item</button>
+      <button class="button2" (click)="addToCart(book.bookid)">Add to Cart</button>
       </div>
     </div>
   </div>
 </div>
 
 
-</div>

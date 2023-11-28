@@ -1,7 +1,8 @@
 import { Component,OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Book } from 'src/app/model/book.model';
 import { BookService } from 'src/app/service/book.service';
+import { CartService } from 'src/app/service/cart.service';
 
 @Component({
   selector: 'app-itemdetail',
@@ -12,7 +13,7 @@ export class ItemdetailComponent implements OnInit{
 
   book: Book | undefined;
 
-  constructor(private route: ActivatedRoute, private bookService: BookService) {}
+  constructor(private route: ActivatedRoute, private bookService: BookService, private router: Router,private cartService: CartService) {}
 
   ngOnInit(): void {
     // Retrieve the book ID from the route parameters
@@ -25,5 +26,19 @@ export class ItemdetailComponent implements OnInit{
         console.log('this.book', this.book)
       });
     }
+  }
+
+
+  addToCart(bookId: number): void {
+    console.log('Adding to cart:', bookId);
+      // Pass the book id to addToCart instead of the entire book object
+      this.cartService.addToCart(bookId);
+    
+  }
+
+
+  viewItemDetails(book: Book): void {
+    // Navigate to the itemdetail page with the book details
+    this.router.navigate(['/itemdetail', book.bookid]);
   }
 }
