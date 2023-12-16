@@ -7,8 +7,8 @@ import { User } from '../model/user.model';
   providedIn: 'root',
 })
 export class UserService {
-  private apiUrl = 'http://localhost:4000/api';
-  private apiUrl2 = 'http://localhost:4000/api/users';
+  private apiUrl = 'virtualbookstore.azurewebsites.net/api';
+  private apiUrl2 = 'virtualbookstore.azurewebsites.net/api/users';
 
   private userData: any;
 

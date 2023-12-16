@@ -29,6 +29,6 @@ export class AppComponent {
       text: 'Logged out successfully!',
       icon: 'info',
     });
-    // Add any additional logout logic if needed
+    
   }
 }

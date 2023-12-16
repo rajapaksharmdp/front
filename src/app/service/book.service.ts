@@ -7,8 +7,7 @@ import { Book } from '../model/book.model';
   providedIn: 'root',
 })
 export class BookService {
-  private apiUrl = 'http://localhost:4000/api'; // Replace with your actual backend URL
-
+  private apiUrl = 'virtualbookstore.azurewebsites.net/api'; // 
   constructor(private http: HttpClient) {}
 
   getBooks(): Observable<Book[]> {

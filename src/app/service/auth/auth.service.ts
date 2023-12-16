@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
   providedIn: 'root'
 })
 export class AuthService {
-  private apiUrl = 'http://localhost:4000/api';
+  private apiUrl = 'virtualbookstore.azurewebsites.net/api';
 
   // Check session storage during initialization
   private isAuthenticatedSubject: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(

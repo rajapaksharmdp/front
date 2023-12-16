@@ -130,7 +130,7 @@
 }
 
 
-.pp {
+.p {
   color: #555;
   margin-left: 35%;
   margin-right: 30%;
@@ -151,13 +151,17 @@
     max-width: max-content;
 }
 
+  .button1 {
+    margin-bottom: 5px;
+  }
+
   .about-section h2,
   .contact-us-section h2 {
     margin-left: 10%;
     margin-right: 10%;
   }
 
-  .pp {
+  .p{
     margin-left: 10%;
     margin-right: 10%;
   }
@@ -171,7 +175,7 @@
 
   .about-section h2,
   .contact-us-section h2,
-  .pp {
+  .p {
     margin-left: 5%;
     margin-right: 5%;
   }

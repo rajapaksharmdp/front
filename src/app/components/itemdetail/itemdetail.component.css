@@ -3,8 +3,15 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 84.75vh;
+    min-height: 84.75vh;
   }
+
+  .home {
+    min-height: 100vh; /* Ensure the content takes at least the full viewport height */
+    display: flex;
+    flex-direction: column;
+  }
+  
   
   .card {
     display: grid;
